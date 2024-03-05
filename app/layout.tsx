@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google"
 import "./globals.css";
-import Link from "next/link";
+import LinkNavigation from "./components/LinkNavigation";
 
 const roboto = Roboto({ weight: ['400', '700'], subsets: ["latin"] });
 
@@ -17,10 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body className={`${roboto.className} text-white`}>
-        <header className="flex gap-8 justify-center py-2 bg-gray-600">
-          <Link href="/" className="text-3xl">LISTA</Link>
-          <Link href="/route" className="text-3xl">ROTA</Link>
+      <body className={`${roboto.className} text-white bg-gray-700`}>
+        <header>
+          <nav className="flex gap-8 justify-center py-4 bg-gray-800">
+            <LinkNavigation href="/" text="LISTA"/>
+            <LinkNavigation href="/route" text="ROTA"/>
+          </nav>
         </header>
         {children}
       </body>
