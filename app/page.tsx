@@ -7,7 +7,7 @@ export default function Home() {
     <main>
       <div className="flex gap-28 align-top justify-center mt-24">
         <div className="bg-gray-800 flex gap-8 p-4 rounded-md">
-          <input className="h-8 rounded-md my-auto" />
+          <input className="h-8 my-auto bg-transparent border-b-2" />
           <button><SearchIcon /></button>
           <button><CreateIcon /></button>
           <button><TrashIcon /></button>
