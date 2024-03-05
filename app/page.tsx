@@ -15,7 +15,7 @@ export default function Home() {
             </div>
             <div className="flex justify-between">
               <span className="text-lg">George John</span>
-              <button className="self-center"><PlusIcon /></button>
+              <button className="self-center"><MinusIcon /></button>
             </div>
             <div className="flex justify-between">
               <span className="text-lg">John Wick</span>
@@ -23,10 +23,14 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-4 bg-gray-800 p-4 rounded-md">
-          <h2 className="text-xl">SELECIONADOS</h2>
+        <div className="flex flex-col gap-2 bg-gray-800 p-4 rounded-md min-w-64">
+          <h2 className="text-xl text-center mb-4">SELECIONADOS</h2>
           <div className="flex justify-between">
             <span className="text-lg">Dominic Toretto</span>
+            <button className="self-center"><MinusIcon /></button>
+          </div>
+          <div className="flex justify-between">
+            <span className="text-lg">George John</span>
             <button className="self-center"><MinusIcon /></button>
           </div>
         </div>
