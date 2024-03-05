@@ -4,7 +4,7 @@ import TrashIcon from "@/app/icons/TrashIcon";
 
 export default function ListInputs() {
   return (
-    <div className="bg-gray-800 flex gap-8 p-4 rounded-md">
+    <div className="flex gap-8">
       <input className="h-8 my-auto bg-transparent border-b-2" />
       <button><SearchIcon /></button>
       <button><CreateIcon /></button>
