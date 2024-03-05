@@ -5,7 +5,7 @@ import MinusIcon from "@/app/icons/MinusIcon";
 export default function Home() {
   return (
     <main>
-      <div className="flex gap-28 align-top justify-center mt-24">
+      <div className="flex gap-16 align-top justify-center mt-24">
         <div className="flex flex-col bg-gray-800 rounded-md p-4">
           <ListInputs />
           <div className="flex flex-col mt-8 gap-2 align-middle">
