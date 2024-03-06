@@ -6,7 +6,7 @@ import SelectedList from "@/app/components/SelectedList";
 export default function Home() {
   return (
     <main>
-      <div className="flex gap-16 align-top justify-center mt-24">
+      <div className="flex gap-16 items-start justify-center mt-24">
         <div className="flex flex-col bg-gray-800 rounded-md p-4">
           <ListInputs />
           <ClientList clients={clients}/>
