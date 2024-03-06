@@ -1,6 +1,7 @@
 import ListInputs from "@/app/components/ListInputs";
-import MinusIcon from "@/app/icons/MinusIcon";
-import ClientList from "./components/ClientList";
+import ClientList from "@/app/components/ClientList";
+import { clients } from "@/app/utils/clients";
+import SelectedList from "@/app/components/SelectedList";
 
 export default function Home() {
   return (
@@ -12,14 +13,15 @@ export default function Home() {
         </div>
         <div className="flex flex-col gap-2 bg-gray-800 p-4 rounded-md min-w-64">
           <h2 className="text-xl text-center mb-4">SELECIONADOS</h2>
-          <div className="flex justify-between">
-            <span className="text-lg">Dominic Toretto</span>
-            <button className="self-center"><MinusIcon /></button>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-lg">George John</span>
-            <button className="self-center"><MinusIcon /></button>
-          </div>
+          {
+            clients.map(client => {
+              if (client.selected) return <SelectedList key={client.id} client={client} />
+
+              // return client.selected
+              //   ? <SelectedList key={client.id} client={client} />
+              //   : <></>
+            })
+          }
         </div>
       </div>
     </main >
