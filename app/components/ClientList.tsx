@@ -1,4 +1,3 @@
-import SearchIcon from "@/app/icons/SearchIcon";
 import CreateIcon from "@/app/icons/CreateIcon";
 import TrashIcon from "@/app/icons/TrashIcon";
 import ClientContainer from "@/app/components/ClientContainer"
