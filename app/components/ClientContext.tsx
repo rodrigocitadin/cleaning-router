@@ -1,9 +1,8 @@
 'use client'
 
 import { useState, createContext, useContext, ReactNode } from "react"
-import { clientsDefault } from "@/app/utils/clients";
 
-const useClientsState = () => useState<Client[]>(clientsDefault)
+const useClientsState = (initialClients: Client[]) => useState<Client[]>(initialClients)
 
 export const ClientsContext = createContext<ReturnType<typeof useClientsState> | null>(null);
 
@@ -15,8 +14,11 @@ export const useClients = () => {
   return clients;
 }
 
-export const ClientsProvider = ({ children }: { children: ReactNode }) => {
-  const [clients, setClients] = useClientsState();
+export const ClientsProvider = ({ clients: initialClients, children }: {
+  clients: Client[],
+  children: ReactNode
+}) => {
+  const [clients, setClients] = useClientsState(initialClients);
 
   return (
     <ClientsContext.Provider value={[clients, setClients]}>
