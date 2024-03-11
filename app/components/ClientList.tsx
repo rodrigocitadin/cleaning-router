@@ -25,9 +25,9 @@ export default function ClientList() {
       </div>
       <div className="flex flex-col mt-8 gap-2 align-middle">
         {
-          searchValue.trim()
-            ? <h1>oi</h1>
-            : clients.map(client => (
+          clients
+            .filter(c => c.name.toLowerCase().startsWith(searchValue.trim().toLowerCase()))
+            .map(client => (
               <ClientContainer
                 key={client.id}
                 client={client}
