@@ -1,4 +1,4 @@
-  export const clients: Client[] = [
+  export const clientsDefault: Client[] = [
     {
       id: 1,
       name: "Dominic Toretto",
