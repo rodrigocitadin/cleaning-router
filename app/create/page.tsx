@@ -1,18 +1,35 @@
 'use client';
 
-import { useState } from "react";
-import { ClientsProvider } from "../components/ClientContext";
+import { SyntheticEvent, useState } from "react";
+import { useClients } from "@/app/components/ClientContext";
 
 export default function Home() {
+  const [clients, setClients] = useClients();
+  const [clientCount, setClientCount] = useState(clients.length + 1);
   const [newClient, setNewClient] = useState<Client>({
-    id: Math.random() * 100,
+    id: clientCount,
     name: '',
     phone: '',
     selected: false
   });
 
+  function saveNewClient(e: SyntheticEvent) {
+    setClients([...clients, newClient]);
+    setClientCount(clientCount + 1);
+    setNewClient({
+      id: clientCount + 1,
+      name: '',
+      phone: '',
+      selected: false
+    })
+
+    console.log(clientCount);
+    console.log(newClient);
+
+    e.preventDefault();
+  }
+
   return (
-    // {/* <ClientsProvider clients={clientsDefault}> */ }
     <form className="m-auto w-96 gap-8 flex flex-col bg-gray-800 rounded-md p-4 items-start justify-center mt-24" >
       <div className="flex flex-col w-full">
         <label>Name</label>
@@ -36,8 +53,13 @@ export default function Home() {
           type="tel"
         />
       </div>
-      {/* <button>SAVE</button> */}
+      <button
+        className="w-full bg-gray-500 rounded-md p-4 text-white"
+        onClick={saveNewClient}
+      >
+        SAVE
+      </button>
     </form >
-    // {/* </ClientsProvider> */ }
   )
+
 }
