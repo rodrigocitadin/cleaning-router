@@ -20,8 +20,8 @@ export default function RootLayout({
       <body className={`${roboto.className} text-white bg-gray-700`}>
         <header>
           <nav className="flex gap-8 justify-center py-4 bg-gray-800">
-            <LinkNavigation href="/" text="LISTA"/>
-            <LinkNavigation href="/route" text="ROTA"/>
+            <LinkNavigation href="/" text="LIST"/>
+            <LinkNavigation href="/path" text="PATH"/>
           </nav>
         </header>
         {children}

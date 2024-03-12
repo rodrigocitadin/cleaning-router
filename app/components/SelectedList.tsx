@@ -6,7 +6,7 @@ export default function SelectedList() {
 
   return (
     <div className="flex flex-col gap-2 bg-gray-800 p-4 rounded-md min-w-64">
-      <h2 className="text-xl text-center mb-4">SELECIONADOS</h2>
+      <h2 className="text-xl text-center mb-4">SELECTED</h2>
       {
         clients.some(c => c.selected)
           ? clients.map(client => client.selected
