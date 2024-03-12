@@ -20,7 +20,7 @@ export default function ClientList() {
           type="text"
           value={searchValue}
           onChange={e => setSearchValue(e.target.value)}
-          placeholder="Search a name..."
+          placeholder="Search a name..."         
           className="h-8 w-64 my-auto bg-transparent border-b-2"
         />
         <Link className="self-center" href="/create"><CreateIcon /></Link>
